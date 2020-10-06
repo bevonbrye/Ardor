@@ -1,6 +1,14 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body {
     margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    height: 100vh;
 }
