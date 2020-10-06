@@ -1,6 +1,6 @@
 # Ardor: The Obscure Journey of a Timeless Game 
 ## Bevon Benet Brye-Cadena 
-
+![Earth from space](https://imgur.com/zfqcpAR.jpg)
 Ardor is a new take on a classic game (Hangman) that brings the user on a more fulfilling journey - obscure in its nature but rewarding by its end. 
 
 ## Game Rules: 
