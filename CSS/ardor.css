@@ -10,5 +10,12 @@ body {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto;
-    height: 100vh;
+}
+
+header {
+    background-color: grey;
+}
+
+.container {
+    justify-content: space-between;
 }
