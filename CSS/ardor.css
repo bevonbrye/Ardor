@@ -15,6 +15,7 @@ header {
 }
 
 .container {
+    font-size: 20px;
     display: inline-block;
     justify-content: space-between;
 }

@@ -26,12 +26,7 @@ startGame();
 
 function clickLetter(e) {
     let letter = e.target.innerText;
-    if (
-        letter.length > 1 ||
-        gameOver() ||
-        lettersGuessed.includes(letter) ||
-        userGuess.includes(letter)
-    ) return;
+    if (letter.length > 1 || gameOver() || lettersGuessed.includes(letter) || userGuess.includes(letter)) return;
     if (arrWord.includes(letter)) {
         let guess = '';
         // loop through the guess
@@ -47,7 +42,7 @@ function clickLetter(e) {
 }
 
 function gameOver() {
-    if (userGuess === arrWord || lettersGuessed === easyWrongGuesses) {
+    if (userGuess === arrWord || lettersGuessed === hardWrongGuesses) {
         return;
     }
 }
@@ -63,3 +58,5 @@ function startGame() {
         userGuess += letter === ' ' ? ' ' : '_'; // ter op easier way to use condits
     }
 };
+
+// create function that enables me to show my win loss
