@@ -5,7 +5,7 @@
 // createPic.setAttribute('src', './human.png');
 // createPic.setAttribute('class', 'createPic');
 // container.appendChild(createPic)
-
+document.querySelector('.container').addEventListener('click', clickLetter);
 
 //const and Lets: 
 //create array of words to be used
@@ -22,6 +22,36 @@ let userGuess;
 
 // functions:
 //start game funtion that will enable all the varibles that will change:
+startGame();
+
+function clickLetter(e) {
+    let letter = e.target.innerText;
+    if (
+        letter.length > 1 ||
+        gameOver() ||
+        lettersGuessed.includes(letter) ||
+        userGuess.includes(letter)
+    ) return;
+    if (arrWord.includes(letter)) {
+        let guess = '';
+        // loop through the guess
+        for (let i = 0; i < arrWord.length; i++) {
+            guess += arrWord.charAt(i) === letter ?
+                letter : userGuess.charAt(i)
+        }
+        userGuess = guess
+    } else {
+        lettersGuessed.push(letter)
+    }
+    console.log(userGuess, lettersGuessed)
+}
+
+function gameOver() {
+    if (userGuess === arrWord || lettersGuessed === easyWrongGuesses) {
+        return;
+    }
+}
+
 function startGame() {
     lettersGuessed = [];
     //I need to get a random number from the array of words 
@@ -33,4 +63,3 @@ function startGame() {
         userGuess += letter === ' ' ? ' ' : '_'; // ter op easier way to use condits
     }
 };
-startGame();

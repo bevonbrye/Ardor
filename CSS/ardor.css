@@ -15,6 +15,6 @@ header {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+    display: inline-block;
+    justify-content: space-between;
 }
