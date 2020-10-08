@@ -5,7 +5,7 @@
 // createPic.setAttribute('src', './human.png');
 // createPic.setAttribute('class', 'createPic');
 // container.appendChild(createPic)
-document.querySelector('.container').addEventListener('click', clickLetter);
+document.querySelector('section').addEventListener('click', clickLetter);
 
 //const and Lets: 
 //create array of words to be used
@@ -22,29 +22,32 @@ let userGuess;
 
 // functions:
 //start game funtion that will enable all the varibles that will change:
+
+
 startGame();
+
 
 function clickLetter(e) {
     let letter = e.target.innerText;
-    if (letter.length > 1 || gameOver() || lettersGuessed.includes(letter) || userGuess.includes(letter)) return;
+    if (letter.length > 1 || gameOver() || lettersGuessed.includes(letter) || userGuess.includes(letter))
+        return;
+    //------------------------------
     if (arrWord.includes(letter)) {
         let guess = '';
-        // loop through the guess
         for (let i = 0; i < arrWord.length; i++) {
             guess += arrWord.charAt(i) === letter ?
                 letter : userGuess.charAt(i)
         }
+        //-------------------------
         userGuess = guess
     } else {
-        lettersGuessed.push(letter)
+        lettersGuessed.push(letter);
     }
-    console.log(userGuess, lettersGuessed)
+
 }
 
 function gameOver() {
-    if (userGuess === arrWord || lettersGuessed === hardWrongGuesses) {
-        return;
-    }
+    return (userGuess === arrWord || lettersGuessed.length === easyWrongGuesses)
 }
 
 function startGame() {
@@ -55,8 +58,10 @@ function startGame() {
     // I need to loop through the array of words 
     userGuess = '';
     for (let letter of arrWord) {
-        userGuess += letter === ' ' ? ' ' : '_'; // ter op easier way to use condits
+        userGuess += (letter === ' ') ? ' ' : '_'; // ter op easier way to use condits
     }
 };
+
+
 
 // create function that enables me to show my win loss
