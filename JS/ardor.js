@@ -1,12 +1,6 @@
-//extra: ignore for now 
-// let container = document.querySelector('container')
-
-// let createPic = document.createElement('img');
-// createPic.setAttribute('src', './human.png');
-// createPic.setAttribute('class', 'createPic');
-// container.appendChild(createPic)
-document.querySelector('section').addEventListener('click', clickLetter);
-const usersGuess = document.querySelector('.usersGuess')
+const usersGuess = document.querySelector('.usersGuess');
+const retry = document.querySelector('.retry')
+const WOLM = document.querySelector('h1')
 const arrayOfWords = ['cat', 'dog'] //[, 'sabaism', 'latibuli', 'chrysalism', 'astrophile', 'psithurism', 'kalokagathia', 'ataraxia', 'eurneirophrenia', 'kalopsia', 'mogoa', 'whelve', 'dormiveglia', 'aeipathy', 'woodnote', 'pulchritudinous', 'nemophilst'];
 const easyWrongGuesses = 8;
 const medWrongGuesses = 6;
@@ -14,7 +8,8 @@ const hardWrongGuesses = 3;
 let arrWord;
 let lettersGuessed;
 let userGuess;
-
+document.querySelector('section').addEventListener('click', clickLetter);
+retry.addEventListener('click', startGame)
 startGame();
 
 function clickLetter(e) {
@@ -45,6 +40,18 @@ function startGame() {
     displayItems();
 };
 
+function winOrLoseMsg() {
+    if (userGuess === arrWord) {
+        WOLM.innerText = 'You are amazing!'
+    } else if (lettersGuessed.length === hardWrongGuesses) {
+        WOLM.innerText = 'You are amazing, but keep trying!'
+    } else {
+        WOLM.innerText = 'Your Journey Starts Here'
+    }
+}
+
 function displayItems() {
-    usersGuess.innerText = userGuess
+    usersGuess.innerText = userGuess;
+    retry.style.display = gameOver() ? 'block' : 'none';
+    winOrLoseMsg();
 }
