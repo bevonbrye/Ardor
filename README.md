@@ -47,3 +47,6 @@ Though the origins of the game are unknown, a variant is mentioned in a book of 
 
 ## Credits 
 Jason Su, JH, StackOverFlow. 
+
+## Playgame:
+https://bevonbrye.github.io/Ardor/
