@@ -24,6 +24,8 @@ Though the origins of the game are unknown, a variant is mentioned in a book of 
 
 ![game shot end](https://imgur.com/Vpph3wd.png)
 
+![wireframe](https://imgur.com/UHB3c1Y.png)
+
 ## Code: 
  
 > `function winOrLoseMsg() {
