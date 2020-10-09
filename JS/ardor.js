@@ -1,6 +1,6 @@
 const usersGuess = document.querySelector('.usersGuess');
 const retry = document.querySelector('.retry')
-const WOLM = document.querySelector('h1')
+const WOLM = document.querySelector('h3')
 const arrayOfWords = ['cat', 'dog'] //[, 'sabaism', 'latibuli', 'chrysalism', 'astrophile', 'psithurism', 'kalokagathia', 'ataraxia', 'eurneirophrenia', 'kalopsia', 'mogoa', 'whelve', 'dormiveglia', 'aeipathy', 'woodnote', 'pulchritudinous', 'nemophilst'];
 const easyWrongGuesses = 8;
 const medWrongGuesses = 6;
