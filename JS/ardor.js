@@ -6,9 +6,9 @@
 // createPic.setAttribute('class', 'createPic');
 // container.appendChild(createPic)
 document.querySelector('section').addEventListener('click', clickLetter);
-
-//const and Lets: 
-//create array of words to be used
+const usersGuess = document.querySelector('.usersGuess')
+    //const and Lets: 
+    //create array of words to be used
 const arrayOfWords = ['ardor', 'sabaism', 'latibuli', 'chrysalism', 'astrophile', 'psithurism', 'kalokagathia', 'ataraxia', 'eurneirophrenia', 'kalopsia', 'mogoa', 'whelve', 'dormiveglia', 'aeipathy', 'woodnote', 'pulchritudinous', 'nemophilst'];
 //consts and lets: 
 const easyWrongGuesses = 8;
@@ -26,7 +26,6 @@ let userGuess;
 
 startGame();
 
-
 function clickLetter(e) {
     let letter = e.target.innerText;
     if (letter.length > 1 || gameOver() || lettersGuessed.includes(letter) || userGuess.includes(letter))
@@ -35,19 +34,19 @@ function clickLetter(e) {
     if (arrWord.includes(letter)) {
         let guess = '';
         for (let i = 0; i < arrWord.length; i++) {
-            guess += arrWord.charAt(i) === letter ?
-                letter : userGuess.charAt(i)
+            guess += arrWord.charAt(i) === letter ? letter : userGuess.charAt(i)
         }
         //-------------------------
-        userGuess = guess
+        userGuess = guess;
     } else {
         lettersGuessed.push(letter);
     }
-
+    displayItems();
 }
 
 function gameOver() {
-    return (userGuess === arrWord || lettersGuessed.length === easyWrongGuesses)
+    return arrWord === userGuess || lettersGuessed.length === easyWrongGuesses;
+
 }
 
 function startGame() {
@@ -58,10 +57,11 @@ function startGame() {
     // I need to loop through the array of words 
     userGuess = '';
     for (let letter of arrWord) {
-        userGuess += (letter === ' ') ? ' ' : '_'; // ter op easier way to use condits
+        userGuess += letter === ' ' ? ' ' : '_'; // ter op easier way to use condits
     }
+    displayItems();
 };
 
-
-
-// create function that enables me to show my win loss
+function displayItems() {
+    usersGuess.innerText = userGuess
+}
