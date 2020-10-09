@@ -27,7 +27,7 @@ let userGuess;
 startGame();
 
 function clickLetter(e) {
-    let letter = e.target.innerText;
+    const letter = e.target.innerText;
     if (letter.length > 1 || gameOver() || lettersGuessed.includes(letter) || userGuess.includes(letter))
         return;
     //------------------------------
@@ -56,9 +56,6 @@ function startGame() {
     arrWord = arrayOfWords[getRandomIndex];
     // I need to loop through the array of words 
     userGuess = '';
-    for (let letter of arrWord) {
-        userGuess += letter === ' ' ? ' ' : '_'; // ter op easier way to use condits
-    }
     displayItems();
 };
 
