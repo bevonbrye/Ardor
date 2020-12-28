@@ -1,6 +1,6 @@
 const usersGuess = document.querySelector('.usersGuess');
 const retry = document.querySelector('.retry')
-const WOLM = document.querySelector('h3')
+const WOLM = document.querySelector('.wolm')
 const bgPlayer = document.getElementById('bg-player');
 const bgCheckbox = document.querySelector('input[type="checkbox"]');
 
@@ -24,13 +24,16 @@ retry.addEventListener('click', startGame)
 bgCheckbox.addEventListener('change', handleBgChanged);
 
 
-startGame();
 
 // Functions: 
+console.log(arrWord)
 
 function clickLetter(e) {
     const letter = e.target.innerText;
-    if (letter.length > 1 || gameOver() || lettersGuessed.includes(letter) || userGuess.includes(letter))
+    if (
+        letter.length > 1 ||
+        gameOver() || lettersGuessed.includes(letter) ||
+        userGuess.includes(letter))
         return;
     if (arrWord.includes(letter)) {
         let guess = '';
@@ -53,6 +56,9 @@ function startGame() {
     const getRandomIndex = Math.floor(Math.random() * arrayOfWords.length)
     arrWord = arrayOfWords[getRandomIndex];
     userGuess = '';
+    for (let char of arrWord) {
+        userGuess += (char === ' ') ? ' ' : '_';
+    }
     displayItems();
 };
 
@@ -67,7 +73,7 @@ function winOrLoseMsg() {
 }
 
 function displayItems() {
-    usersGuess.innerText = userGuess;
+    usersGuess.innerText = userGuess.toUpperCase();
     retry.style.display = gameOver() ? 'block' : 'none';
     winOrLoseMsg();
 };
@@ -75,12 +81,15 @@ function displayItems() {
 
 //  checks if input box is checked: 
 function handleBgChanged() {
+    bgPlayer.volume = 0.1;
+
     bgCheckbox.checked ? bgPlayer.play() : bgPlayer.pause();
 }
 
 function clickImage() {
     let hack = document.getElementById('letters');
     hack.style.display = "block";
+    startGame();
 }
 
 

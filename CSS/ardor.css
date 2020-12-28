@@ -59,7 +59,7 @@ h1 {
 img {
     height: 500px;
     border-radius: 50%;
-    box-shadow: 0px 50px 50px gray;
+    box-shadow: 0px 35px 50px gray;
 }
 
 .clickImg {
@@ -97,7 +97,7 @@ section {
     box-shadow: none;
     display: inline-block;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 15px;
     text-align: center;
     width: 300px;
 }
@@ -119,7 +119,8 @@ button:hover {
 }
 
 .usersGuess {
+    display: flex;
     color: black;
-    font-size: 20px;
+    font-size: 50px;
     letter-spacing: 5px;
 }
