@@ -17,8 +17,12 @@ main {
     align-items: center;
 }
 
-h1 {
+.titles {
     text-align: center;
+}
+
+.gameTitle {
+    font-size: 40px;
 }
 
 img {
@@ -142,8 +146,7 @@ section {
 /* The switch - the box around the slider */
 
 .switch {
-    /* position: absolute;
-    display: flex; */
+    display: flex;
     position: fixed;
     bottom: 0;
     width: 60px;
@@ -211,4 +214,27 @@ input:checked+.slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+
+/* end of toggle */
+
+.instructionBtn {
+    position: flex;
+    height: auto;
+    width: 100px;
+    border: none;
+    background: none;
+    font-size: 18px;
+    padding: 2rem;
+}
+
+#instruction {
+    display: none;
+    margin-top: 3rem;
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    z-index: -1;
+    padding: 2rem;
 }

@@ -13,7 +13,7 @@
 
 <body>
 
-    <!-- <h3 class='guessLeft'> Hello </h3> -->
+    <!-- <h3 class="guessLeft"> Hello </h3> -->
 
     <!-- <div class="difficulties">
         <button class="hard"> Hard </h2>
@@ -22,13 +22,22 @@
     </div> -->
 
 
+    <button class="instructionBtn" onclick="instructions()">Instructions</button>
 
-    <h1 class='gameTitle'> Welcome to Ardor </h1>
+    <div id="instruction">
+        Welcome to the game of Ardor. <br> A postive spin on the classic game hang man.<br> You can choose between three difficulties <br> if the game is won on hard 5 times you will be taken on a journey!
+    </div>
+
+
+    <div class="titles">
+        <h1 class="gameTitle"> Welcome to Ardor </h1>
+        <p>A Word Guessing Game</p>
+    </div>
     <main>
-        <img class="clickImg" src='giphy.gif'>
-        <h3 class='wolm'></h3>
-        <h2 class='usersGuess'></h2>
-        <button class='retry'>Retry</button>
+        <img class="clickImg" src="giphy.gif">
+        <h3 class="wolm"></h3>
+        <h2 class="usersGuess"></h2>
+        <button class="retry">Retry</button>
         <section id="letters">
             <button>a</button>
             <button>b</button>
@@ -66,7 +75,7 @@
         <span class="slider round"> </span>
 
       </label>
-    <h3 class='toggleMusic'> Play Background Music </h3>
+    <h3 class="toggleMusic"> Play Background Music </h3>
 
 
     <audio id="bg-player" autoplay src="SpaceSound.mp3" loop> 

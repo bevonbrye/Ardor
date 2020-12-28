@@ -89,6 +89,15 @@ function clickImage() {
     console.log(arrWord)
 }
 
+function instructions() {
+    var x = document.getElementById("instruction");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
 function difficulties() {
 
 }
