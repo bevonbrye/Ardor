@@ -7,19 +7,30 @@
     <title>Ardor</title>
     <link rel="stylesheet" href="./CSS/ardor.css">
     <script src="./JS/ardor.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="logo-container">
-        <img class="logo" src="" />
+
+
+
+
+    <div class="difficulties">
+        <h2 class="hard"> Hard </h2>
+        <h2 class="medium"> Medium </h2>
+        <h2 class="easy"> Easy </h2>
     </div>
+
+
+
     <h1> Ardor: An Obscure Journey of a Timeless Game </h1>
     <main>
-        <img src='giphy.gif'>
+        <img class="clickImg" src='giphy.gif'>
+
         <h2 class='usersGuess'></h2>
-        <h3></h3>
         <button class='retry'>Retry</button>
-        <section>
+        <section id="letters" style="display:none">
             <button>a</button>
             <button>b</button>
             <button>c</button>
@@ -48,6 +59,11 @@
             <button>z</button>
         </section>
     </main>
+
+    <!-- plays background music -->
+    <input type="checkbox">Play Background Music
+    <audio id="bg-player" autoplay src="SpaceSound.mp3" loop> 
+
 </body>
 
 </html>

@@ -1,16 +1,32 @@
 const usersGuess = document.querySelector('.usersGuess');
 const retry = document.querySelector('.retry')
 const WOLM = document.querySelector('h3')
-const arrayOfWords = ['cat', 'dog'] //[, 'sabaism', 'latibuli', 'chrysalism', 'astrophile', 'psithurism', 'kalokagathia', 'ataraxia', 'eurneirophrenia', 'kalopsia', 'mogoa', 'whelve', 'dormiveglia', 'aeipathy', 'woodnote', 'pulchritudinous', 'nemophilst'];
+const bgPlayer = document.getElementById('bg-player');
+const bgCheckbox = document.querySelector('input[type="checkbox"]');
+
+
+const arrayOfWords = ['cat', 'dog', 'sabaism', 'latibuli', 'chrysalism', 'astrophile', 'psithurism', 'kalokagathia', 'ataraxia', 'eurneirophrenia', 'kalopsia', 'mogoa', 'whelve', 'dormiveglia', 'aeipathy', 'woodnote', 'pulchritudinous', 'nemophilst'];
 const easyWrongGuesses = 8;
 const medWrongGuesses = 6;
 const hardWrongGuesses = 3;
+
 let arrWord;
 let lettersGuessed;
 let userGuess;
+
 document.querySelector('section').addEventListener('click', clickLetter);
+document.querySelector('.clickImg').addEventListener('click', clickImage);
+
+
+
+// event listeners: 
 retry.addEventListener('click', startGame)
+bgCheckbox.addEventListener('change', handleBgChanged);
+
+
 startGame();
+
+// Functions: 
 
 function clickLetter(e) {
     const letter = e.target.innerText;
@@ -54,4 +70,18 @@ function displayItems() {
     usersGuess.innerText = userGuess;
     retry.style.display = gameOver() ? 'block' : 'none';
     winOrLoseMsg();
+};
+
+
+//  checks if input box is checked: 
+function handleBgChanged() {
+    bgCheckbox.checked ? bgPlayer.play() : bgPlayer.pause();
 }
+
+function clickImage() {
+    let hack = document.getElementById('letters');
+    hack.style.display = "block";
+}
+
+
+// Use promises setTimeout() to delay game actions
