@@ -4,7 +4,6 @@ const WOLM = document.querySelector('.wolm')
 const bgPlayer = document.getElementById('bg-player');
 const bgCheckbox = document.querySelector('input[type="checkbox"]');
 
-
 const arrayOfWords = ['cat', 'dog', 'sabaism', 'latibuli', 'chrysalism', 'astrophile', 'psithurism', 'kalokagathia', 'ataraxia', 'eurneirophrenia', 'kalopsia', 'mogoa', 'whelve', 'dormiveglia', 'aeipathy', 'woodnote', 'pulchritudinous', 'nemophilst'];
 const easyWrongGuesses = 8;
 const medWrongGuesses = 6;
@@ -18,7 +17,6 @@ document.querySelector('section').addEventListener('click', clickLetter);
 document.querySelector('.clickImg').addEventListener('click', clickImage);
 
 
-
 // event listeners: 
 retry.addEventListener('click', startGame)
 bgCheckbox.addEventListener('change', handleBgChanged);
@@ -26,8 +24,6 @@ bgCheckbox.addEventListener('change', handleBgChanged);
 
 
 // Functions: 
-console.log(arrWord)
-
 function clickLetter(e) {
     const letter = e.target.innerText;
     if (
@@ -82,14 +78,19 @@ function displayItems() {
 //  checks if input box is checked: 
 function handleBgChanged() {
     bgPlayer.volume = 0.1;
-
     bgCheckbox.checked ? bgPlayer.play() : bgPlayer.pause();
 }
+
 
 function clickImage() {
     let hack = document.getElementById('letters');
     hack.style.display = "block";
     startGame();
+    console.log(arrWord)
+}
+
+function difficulties() {
+
 }
 
 
