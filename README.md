@@ -18,25 +18,25 @@ User has the option to choose letters from a word bank. If the user guesses wron
 ## Brief History: 
 Though the origins of the game are unknown, a variant is mentioned in a book of children's games assembled by Alice Gomme in 1894 called Birds, Beasts, and Fishes. This version lacks the image of a hanged man, instead relying on keeping score as to the number of attempts it took each player to fill in the blanks.
 
-## Game: 
+<!-- ## Game:  -->
 
-![game shot beginning](https://imgur.com/7dqE7VE.png)
+<!-- ![game shot beginning](https://imgur.com/7dqE7VE.png)
 
-![game shot end](https://imgur.com/Vpph3wd.png)
+![game shot end](https://imgur.com/Vpph3wd.png) -->
 
-![wireframe](https://imgur.com/UHB3c1Y.png)
+<!-- ![wireframe](https://imgur.com/UHB3c1Y.png) -->
 
 ## Code: 
  
-> `function winOrLoseMsg() {
+ >```function winOrLoseMsg() {
     if (userGuess === arrWord) {
         WOLM.innerText = 'You are amazing!'
     } else if (lettersGuessed.length === hardWrongGuesses) {
         WOLM.innerText = 'You are amazing, but keep trying!'
     } else {
         WOLM.innerText = 'Your Journey Starts Here'
-    }
-}; `
+        } 
+    }; 
 
 ## Future Developement: DLC (No Man's Sky Parable)
 - Drag and drop API
